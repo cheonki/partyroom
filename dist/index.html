@@ -9,6 +9,31 @@
 <body>
 <header><a class="brand" href="#" aria-label="플레이하우스 처음으로"><span class="brand-icon">✳</span><span>PLAYHOUSE<small>플레이하우스 · 숙대점</small></span></a><nav aria-label="주 메뉴"><a href="#space">공간 둘러보기</a><a href="#play">즐길 거리</a><a href="#guide">이용 안내</a><a href="#reviews">방문 후기</a><a href="#location">오시는 길</a></nav><a class="book nav-book" href="https://m.booking.naver.com/booking/10/bizes/526188" target="_blank" rel="noopener"><b>N</b> 네이버 예약 <span>↗</span></a></header>
 <main>
+<section aria-label="플레이하우스 공간 영상" style="position:relative;background:#16121c;width:min(96%,1500px);margin:18px auto 0;border-radius:22px;overflow:hidden">
+  <video id="playhouse-tour" aria-label="플레이하우스 실제 공간 영상" autoplay muted loop playsinline controls preload="metadata" poster="assets/space-18.jpg" style="display:block;width:100%;height:clamp(250px,62svh,680px);object-fit:contain">
+    <source src="assets/playhouse-tour.mp4" type="video/mp4">
+  </video>
+  <button id="tour-sound" hidden type="button" style="position:absolute;right:16px;top:16px;border:1px solid #ffffff80;border-radius:24px;padding:10px 16px;background:#17131ce8;color:white;font-weight:700">🔊 소리 켜기</button>
+</section>
+<script>
+(() => {
+  const video = document.getElementById('playhouse-tour');
+  const button = document.getElementById('tour-sound');
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    video.autoplay = false;
+    video.pause();
+  }
+  button.hidden = false;
+  video.addEventListener('volumechange', () => {
+    button.textContent = video.muted ? '🔊 소리 켜기' : '🔇 소리 끄기';
+  });
+  button.addEventListener('click', () => {
+    video.muted = !video.muted;
+    if (!video.muted) video.play().catch(() => {});
+  });
+})();
+</script>
+
 <section class="hero"><div class="hero-copy"><p class="eyebrow"><span></span> 서울 용산 · 숙대 앞 프라이빗 파티룸</p><h1>오늘, 우리끼리<br><span class="orange">제대로 <i>놀자!</i></span></h1><p class="intro">좋아하는 사람들, 좋아하는 음악.<br>평범한 만남이 특별한 하루가 되는 곳.</p><div class="hero-actions"><a class="book" href="https://m.booking.naver.com/booking/10/bizes/526188" target="_blank" rel="noopener"><b>N</b> 네이버에서 예약하기 <span>↗</span></a><a class="text-link" href="#space">사진 먼저 구경하기 ↓</a></div><div class="hero-tags"><span>🎂 생일 파티</span><span>🥂 친구 모임</span><span>🎤 우리만의 놀이터</span></div><span class="hero-spark" aria-hidden="true">✳</span></div><div class="hero-visual"><img class="hero-img" src="assets/space-18.jpg" alt="파티 조명과 넓은 테이블, 스윙 체어가 있는 플레이하우스 전체 공간" fetchpriority="high"><span class="photo-label">여기가 바로, 우리의 오늘 📍</span><div class="sticker">GOOD TIMES<br><strong>START HERE!</strong><span>✦ PLAYHOUSE ✦</span></div><div class="mini-photo"><img src="assets/space-12.jpg" alt="창가에 마련된 밝고 아늑한 파티 테이블"><span>낮에도, 분위기 좋게 ♡</span></div><span class="photo-number">01 / OUR PLACE</span></div></section>
 <div class="ticker" aria-hidden="true"><span>MAKE SOME MEMORIES</span><b>✳</b><span>우리끼리 즐기는 특별한 하루</span><b>✳</b><span>PLAY. PARTY. REPEAT.</span><b>✳</b></div>
 <section id="space" class="section space"><div class="section-heading"><div><p class="eyebrow">TAKE A LOOK AROUND</p><h2>사진만 봐도,<br>벌써 놀고 싶어지는 곳.</h2></div><p>밝고 아늑한 낮부터 반짝이는 파티 타임까지.<br>취향에 따라 달라지는 플레이하우스를 만나보세요.</p></div><div class="filters" role="group" aria-label="공간 사진 분류"><button class="active" data-filter="all" aria-pressed="true">전체 공간</button><button data-filter="day" aria-pressed="false">감성 & 휴식</button><button data-filter="party" aria-pressed="false">파티 & 조명</button><button data-filter="fun" aria-pressed="false">놀거리 & 편의시설</button></div><div class="gallery" id="gallery"></div><p class="gallery-hint">↗ 사진을 누르면 더 크게 볼 수 있어요 <span>· 실제 공간 사진이며, 소품과 배치는 현재와 다를 수 있습니다.</span></p><button class="more" id="more">공간 사진 더 보기 <span>＋</span></button></section>
