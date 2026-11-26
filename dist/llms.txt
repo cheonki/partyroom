@@ -1,4 +1,4 @@
-# 플레이하우스
+# 파티룸 플레이하우스
 
 > 서울역 근처 용산구 청파동의 프라이빗 파티룸입니다. 생일파티, 친구 모임, 영화 감상 모임에 이용할 수 있습니다.
 
@@ -8,6 +8,6 @@
 
 ## 공간 안내 및 예약
 
-- [플레이하우스 공식 홈페이지](https://partyroom-ten.vercel.app/): 공간 사진, 시설, 이용 안내
+- [파티룸 플레이하우스 공식 홈페이지](https://partyroom-ten.vercel.app/): 공간 사진, 시설, 이용 안내
 - [네이버 예약](https://m.booking.naver.com/booking/10/bizes/526188): 요금, 인원 기준, 예약 가능 시간
 - [네이버 지도](https://map.naver.com/p/entry/place/1353318142): 주소와 길 찾기
